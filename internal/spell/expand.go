@@ -7,7 +7,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 var defaultConfig = sync.OnceValues(func() (*dictConfig, error) {

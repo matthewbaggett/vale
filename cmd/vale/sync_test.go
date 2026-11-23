@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 func setupLocalSyncTestPackage(t *testing.T, root string) (string, string) {
@@ -222,7 +222,7 @@ func syncZipPkg(t *testing.T, zipName string) string {
 	root := t.TempDir()
 	stylesPath := filepath.Join(root, "styles")
 
-	pkg, err := filepath.Abs(filepath.Join(TestData, zipName))
+	pkg, err := filepath.Abs(filepath.Join("../../testdata/pkg", zipName))
 	if err != nil {
 		t.Fatal(err)
 	}

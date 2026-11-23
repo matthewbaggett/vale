@@ -6,11 +6,11 @@ import (
 	"slices"
 	"strings"
 
+	rx "github.com/matthewbaggett/vale/v3/internal/regex"
 	"github.com/mitchellh/mapstructure"
-	rx "github.com/vale-cli/vale/v3/internal/regex"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 type step struct {

@@ -1,4 +1,4 @@
-package main
+package pkgsync
 
 import (
 	"archive/zip"
@@ -99,9 +99,9 @@ func installed(t *testing.T, styles string) string {
 
 func withVersion(t *testing.T, v string) {
 	t.Helper()
-	was := version
-	version = v
-	t.Cleanup(func() { version = was })
+	was := Version
+	Version = v
+	t.Cleanup(func() { Version = was })
 }
 
 func TestSyncInstallsTheReleaseThisValeSupports(t *testing.T) {

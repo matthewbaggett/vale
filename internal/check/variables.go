@@ -5,9 +5,9 @@ import (
 	"sync"
 
 	"github.com/jdkato/prose/v3/strcase"
-	rx "github.com/vale-cli/vale/v3/internal/regex"
+	rx "github.com/matthewbaggett/vale/v3/internal/regex"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 var reNumberList = rx.MustCompile(`\d+\.`)

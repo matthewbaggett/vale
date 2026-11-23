@@ -6,10 +6,10 @@ import (
 	"errors"
 	"syscall/js"
 
-	"github.com/vale-cli/vale/v3/internal/check"
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/lint"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/check"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/lint"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // memFS is the in-memory filesystem populated by the JavaScript host via

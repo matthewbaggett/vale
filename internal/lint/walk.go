@@ -12,8 +12,8 @@ import (
 
 	"golang.org/x/net/html"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 // inlineCapture is the text of one inline element, gathered as the block that

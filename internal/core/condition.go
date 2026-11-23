@@ -8,8 +8,8 @@ import (
 
 	"github.com/adrg/frontmatter"
 
-	"github.com/vale-cli/vale/v3/internal/glob"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/glob"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // condSep splits a section header into its glob and its condition, the way a

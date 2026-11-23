@@ -6,8 +6,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	rx "github.com/vale-cli/vale/v3/internal/regex"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	rx "github.com/matthewbaggett/vale/v3/internal/regex"
 )
 
 // patternError reports a rule whose pattern didn't compile.

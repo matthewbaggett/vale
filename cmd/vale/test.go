@@ -8,9 +8,10 @@ import (
 
 	"github.com/pterm/pterm"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/system"
-	"github.com/vale-cli/vale/v3/internal/testsuite"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/pkgsync"
+	"github.com/matthewbaggett/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/testsuite"
 )
 
 // errTestFailed reports cases that ran and did not pass.
@@ -105,7 +106,7 @@ func runTests(args []string, flags *core.CLIFlags) error {
 // installPackages installs pkgs into styles, as `vale sync` would.
 func installPackages(pkgs []string, styles string) error {
 	for idx, pkg := range pkgs {
-		if err := readPkg(pkg, styles, idx); err != nil {
+		if err := pkgsync.ReadPkg(pkg, styles, idx); err != nil {
 			return err
 		}
 	}

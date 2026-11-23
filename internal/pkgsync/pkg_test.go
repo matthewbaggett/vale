@@ -1,4 +1,4 @@
-package main
+package pkgsync
 
 import (
 	"os"
@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 var TestData = "../../testdata/pkg"
@@ -19,7 +19,7 @@ func mockPath() (string, error) {
 	}
 	cfg.AddStylesPath(os.TempDir())
 
-	err = initPath(cfg)
+	err = InitPath(cfg)
 	if err != nil {
 		return "", err
 	}
@@ -33,7 +33,7 @@ func TestNoPkgFound(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	err = readPkg("https://github.com/errata-ai/Microsoft/releases/download/v0.14.x/Microsoft.zip", path, 0)
+	err = ReadPkg("https://github.com/errata-ai/Microsoft/releases/download/v0.14.x/Microsoft.zip", path, 0)
 	if err == nil {
 		t.Fatal("expected error, got nil")
 	}
@@ -50,7 +50,7 @@ func TestLibrary(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	err = readPkg("write-good", path, 0)
+	err = ReadPkg("write-good", path, 0)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -75,7 +75,7 @@ func TestLocalZip(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	err = readPkg(zip, path, 0)
+	err = ReadPkg(zip, path, 0)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -100,7 +100,7 @@ func TestLocalDir(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	err = readPkg(zip, path, 0)
+	err = ReadPkg(zip, path, 0)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -125,7 +125,7 @@ func TestLocalComplete(t *testing.T) { //nolint:dupl
 		t.Fatal(err)
 	}
 
-	err = readPkg(zip, path, 0)
+	err = ReadPkg(zip, path, 0)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -161,7 +161,7 @@ func TestLocalOnlyStyles(t *testing.T) { //nolint:dupl
 		t.Fatal(err)
 	}
 
-	err = readPkg(zip, path, 0)
+	err = ReadPkg(zip, path, 0)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -197,7 +197,7 @@ func TestV3Pkg(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	err = readPkg(zip, path, 0)
+	err = ReadPkg(zip, path, 0)
 	if err != nil {
 		t.Fatal(err)
 	}

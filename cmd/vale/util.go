@@ -3,12 +3,10 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io"
-	"net/http"
 
 	"github.com/pterm/pterm"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // Response is returned after an action.
@@ -36,15 +34,6 @@ func getJSON(data interface{}) string {
 		return err.Error()
 	}
 	return string(b)
-}
-
-func fetchJSON(url string) ([]byte, error) {
-	resp, err := http.Get(url) //nolint:gosec,noctx
-	if err != nil {
-		return []byte{}, err
-	}
-	defer resp.Body.Close()
-	return io.ReadAll(resp.Body)
 }
 
 func printJSON(t interface{}) error {

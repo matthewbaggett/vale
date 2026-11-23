@@ -11,11 +11,12 @@ import (
 	"github.com/jdkato/prose/v3/tag"
 	"github.com/pterm/pterm"
 
-	"github.com/vale-cli/vale/v3/internal/check"
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/lint"
-	"github.com/vale-cli/vale/v3/internal/nlp"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/check"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/lint"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/pkgsync"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // TaggedWord is a word with an NLP context.
@@ -152,28 +153,6 @@ func fix(args []string, flags *core.CLIFlags) error {
 }
 
 func sync(_ []string, flags *core.CLIFlags) error {
-	cfg, err := core.ReadPipeline(flags, true)
-	if err != nil {
-		return err
-	}
-
-	// NOTE: sync should *only* run for a single config file.
-	//
-	// We resolve it before touching the `StylesPath` so that a missing config
-	// reports itself rather than the empty path it leaves behind.
-	rootINI, noRoot := cfg.Root()
-	if noRoot != nil {
-		return core.NewE100("sync", noRoot)
-	} else if err = initPath(cfg); err != nil {
-		return err
-	}
-
-	pkgs, err := core.GetPackages(rootINI)
-	if err != nil {
-		return err
-	}
-	stylesPath := cfg.StylesPath()
-
 	// A progress bar is for someone watching it. Redirected into a CI log it
 	// leaves a trail of redrawn frames and, at the end, no record of what was
 	// actually installed -- so `--plain-progress` swaps it for a line per
@@ -182,76 +161,55 @@ func sync(_ []string, flags *core.CLIFlags) error {
 	// Asked for rather than inferred: a run that has been piped somewhere for
 	// years should keep printing what it always printed.
 	var bar *pterm.ProgressbarPrinter
+	var barErr error
+
+	hooks := pkgsync.Hooks{
+		Start: func(name string) {
+			if bar != nil {
+				bar.UpdateTitle("Syncing " + name)
+				bar.Increment()
+			}
+		},
+		Step: func(kind pkgsync.Kind, name, detail string) {
+			switch {
+			case kind == pkgsync.KindPackage:
+				if bar == nil {
+					fmt.Printf("Synced %s\n", name)
+				}
+			case bar != nil:
+				bar.UpdateTitle("Syncing " + name)
+				bar.Increment()
+			case detail != "":
+				fmt.Printf("Synced %s: %s\n", name, detail)
+			default:
+				fmt.Printf("Synced %s\n", name)
+			}
+		},
+	}
 	if !flags.PlainProgress {
-		grammars, _ := grammarsToSync(cfg)
-		bar, err = pterm.DefaultProgressbar.WithTotal(len(pkgs) + len(cfg.Languages()) + len(grammars)).Start()
-		if err != nil {
-			return err
+		hooks.Plan = func(total int) {
+			bar, barErr = pterm.DefaultProgressbar.WithTotal(total).Start()
 		}
 	}
 
-	for idx, pkg := range pkgs {
-		name := system.FileNameWithoutExt(pkg)
-
-		if bar != nil {
-			bar.UpdateTitle("Syncing " + name)
-			bar.Increment()
-		}
-
-		if err = readPkg(pkg, stylesPath, idx); err != nil {
-			return err
-		}
-
-		if bar == nil {
-			fmt.Printf("Synced %s\n", name)
-		}
-	}
-
-	// The models for the languages the configuration names, after the
-	// packages: a package may be what names a language.
-	synced := func(name, detail string) {
-		switch {
-		case bar != nil:
-			bar.UpdateTitle("Syncing " + name)
-			bar.Increment()
-		case detail != "":
-			fmt.Printf("Synced %s: %s\n", name, detail)
-		default:
-			fmt.Printf("Synced %s\n", name)
-		}
-	}
-
-	nModels, err := syncModels(cfg, stylesPath, len(pkgs), synced)
+	res, err := pkgsync.Sync(flags, hooks)
 	if err != nil {
 		return err
+	} else if barErr != nil {
+		return barErr
 	}
 
-	nGrammars, err := syncGrammars(cfg, stylesPath, len(pkgs)+nModels, synced)
-	if err != nil {
-		return err
+	summary := []string{fmt.Sprintf("%d package(s)", res.Packages)}
+	if res.Models > 0 {
+		summary = append(summary, fmt.Sprintf("%d language model(s)", res.Models))
 	}
-
-	// A model makes a language's rules work; its spelling needs a
-	// dictionary Vale doesn't carry, so say so here rather than at every
-	// lint run.
-	var undictionaried []string
-	for _, lang := range cfg.Languages() {
-		if dic, _ := core.DictionaryFor(cfg, lang); dic == "" {
-			undictionaried = append(undictionaried, lang)
-		}
+	if res.Grammars > 0 {
+		summary = append(summary, fmt.Sprintf("%d grammar(s)", res.Grammars))
 	}
-
-	summary := []string{fmt.Sprintf("%d package(s)", len(pkgs))}
-	if nModels > 0 {
-		summary = append(summary, fmt.Sprintf("%d language model(s)", nModels))
-	}
-	if nGrammars > 0 {
-		summary = append(summary, fmt.Sprintf("%d grammar(s)", nGrammars))
-	}
-	pterm.Success.Printf("Synced %s to '%s'.\n", strings.Join(summary, ", "), stylesPath)
-	if len(undictionaried) > 0 {
+	pterm.Success.Printf("Synced %s to '%s'.\n", strings.Join(summary, ", "), res.StylesPath)
+	if len(res.Undictionaried) > 0 {
 		pterm.Info.Printf("No dictionary for %s: Vale.Spelling skips those files until <name>.dic and <name>.aff are under %s.\n",
-			strings.Join(undictionaried, ", "), filepath.Join(stylesPath, core.DictDir))
+			strings.Join(res.Undictionaried, ", "), filepath.Join(res.StylesPath, core.DictDir))
 	}
 
 	return nil

@@ -1,4 +1,4 @@
-package main
+package pkgsync
 
 import (
 	"encoding/json"
@@ -13,9 +13,9 @@ import (
 	"github.com/jdkato/prose/v3/models"
 	"github.com/pterm/pterm"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/lint/code"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/lint/code"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // A language's models come from the prose release that matches the prose
@@ -30,12 +30,12 @@ const (
 // or a test.
 const modelsURLVar = "VALE_MODELS_URL"
 
-// syncModels installs the model archive for every language the
+// SyncModels installs the model archive for every language the
 // configuration names, after the packages; idx continues their numbering.
 //
 // A language prose publishes no model for is a warning, not an error: it may
 // be one Vale segments by rules alone, as Japanese is.
-func syncModels(cfg *core.Config, stylesPath string, idx int, report func(name, detail string)) (int, error) {
+func SyncModels(cfg *core.Config, stylesPath string, idx int, report func(name, detail string)) (int, error) {
 	synced := 0
 	for i, lang := range cfg.Languages() {
 		if _, ok := models.Lookup(lang); !ok {
@@ -120,12 +120,12 @@ const grammarReleases = "https://github.com/vale-cli/vale/releases/download/%s/%
 // for models.
 const grammarsURLVar = "VALE_GRAMMARS_URL"
 
-// grammarsToSync is the grammars a configuration asks for with its
+// GrammarsToSync is the grammars a configuration asks for with its
 // `Grammars` key: the ones it names, or every one for `ALL`. Without the
 // key, the ones its sections imply: a `[*.go]` section is going to lint Go,
 // so it gets the Go grammar without naming it. An unknown name is an error,
 // since nothing would be found for it.
-func grammarsToSync(cfg *core.Config) ([]string, error) {
+func GrammarsToSync(cfg *core.Config) ([]string, error) {
 	if cfg.Grammars == nil {
 		implied := impliedGrammars(cfg)
 		names := make([]string, 0, len(implied))
@@ -261,10 +261,10 @@ func isWordByte(b byte) bool {
 	return b == '_' || (b >= '0' && b <= '9') || (b >= 'a' && b <= 'z') || (b >= 'A' && b <= 'Z')
 }
 
-// syncGrammars installs the grammars the configuration asks for, after the
+// SyncGrammars installs the grammars the configuration asks for, after the
 // packages and models; idx continues their numbering.
-func syncGrammars(cfg *core.Config, stylesPath string, idx int, report func(name, detail string)) (int, error) {
-	names, err := grammarsToSync(cfg)
+func SyncGrammars(cfg *core.Config, stylesPath string, idx int, report func(name, detail string)) (int, error) {
+	names, err := GrammarsToSync(cfg)
 	if err != nil {
 		return 0, core.NewE100("sync", err)
 	}
@@ -297,8 +297,8 @@ func grammarSource(pkg string) (string, error) {
 		return filepath.Join(base, archive), nil
 	}
 
-	if version == "master" || !isRelease(version) {
+	if Version == "master" || !isRelease(Version) {
 		return "", fmt.Errorf("this build of Vale is not a release to fetch grammars from; set %s", grammarsURLVar)
 	}
-	return fmt.Sprintf(grammarReleases, "v"+strings.TrimPrefix(version, "v"), archive), nil
+	return fmt.Sprintf(grammarReleases, "v"+strings.TrimPrefix(Version, "v"), archive), nil
 }

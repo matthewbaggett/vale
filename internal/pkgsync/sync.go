@@ -1,4 +1,4 @@
-package main
+package pkgsync
 
 import (
 	"fmt"
@@ -8,11 +8,11 @@ import (
 
 	cp "github.com/otiai10/copy"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
-func initPath(cfg *core.Config) error {
+func InitPath(cfg *core.Config) error {
 	// The first entry is always the default `StylesPath`.
 	stylesPath := cfg.StylesPath()
 
@@ -32,7 +32,7 @@ func initPath(cfg *core.Config) error {
 	return nil
 }
 
-func readPkg(pkg, path string, idx int) error {
+func ReadPkg(pkg, path string, idx int) error {
 	if core.IsPhrase(pkg) && !system.IsDir(pkg) {
 		entry := inLibrary(pkg, path)
 		if entry != "" {
@@ -75,7 +75,7 @@ func download(name, url, styles string, index int) error {
 		return err
 	}
 
-	if err = fetch(url, dir); err != nil {
+	if err = Fetch(url, dir); err != nil {
 		if strings.Contains(err.Error(), "unsupported protocol scheme") {
 			err = fmt.Errorf("'%s' is not a valid URL or the directory doesn't exist", url)
 		}
@@ -163,7 +163,7 @@ func installPkg(dir, name, styles string, index int) error {
 		}
 
 		for idx, pkg := range pkgs {
-			if err = readPkg(pkg, styles, idx); err != nil {
+			if err = ReadPkg(pkg, styles, idx); err != nil {
 				return err
 			}
 		}

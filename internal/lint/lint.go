@@ -13,13 +13,13 @@ import (
 
 	"github.com/remeh/sizedwaitgroup"
 
-	"github.com/vale-cli/vale/v3/internal/check"
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/glob"
-	"github.com/vale-cli/vale/v3/internal/lint/code"
-	"github.com/vale-cli/vale/v3/internal/nlp"
-	"github.com/vale-cli/vale/v3/internal/regex"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/check"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/glob"
+	"github.com/matthewbaggett/vale/v3/internal/lint/code"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/regex"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // A Linter lints a File.

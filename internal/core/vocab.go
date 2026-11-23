@@ -10,9 +10,9 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	rx "github.com/vale-cli/vale/v3/internal/regex"
-	"github.com/vale-cli/vale/v3/internal/spell"
-	"github.com/vale-cli/vale/v3/internal/system"
+	rx "github.com/matthewbaggett/vale/v3/internal/regex"
+	"github.com/matthewbaggett/vale/v3/internal/spell"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // vocabFiles are the names a YAML vocabulary may have.

@@ -8,13 +8,16 @@ import (
 
 	"github.com/spf13/pflag"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/lint"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/lint"
+	"github.com/matthewbaggett/vale/v3/internal/pkgsync"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // version is set during the release build process.
 var version = "master"
+
+func init() { pkgsync.Version = version }
 
 func stat() bool {
 	stat, err := os.Stdin.Stat()

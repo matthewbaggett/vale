@@ -11,7 +11,7 @@ import (
 
 	"github.com/pterm/pterm"
 
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // An Error is a failure of Vale itself rather than a finding in a document:

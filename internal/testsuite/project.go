@@ -1,6 +1,6 @@
 package testsuite
 
-import "github.com/vale-cli/vale/v3/internal/core"
+import "github.com/matthewbaggett/vale/v3/internal/core"
 
 // NewRunnerFor prepares to run cases against a configuration that is already
 // resolved, such as one built from text over an in-memory filesystem. Cases

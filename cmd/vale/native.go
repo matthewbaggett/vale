@@ -12,8 +12,9 @@ import (
 	"github.com/adrg/xdg"
 	"github.com/pterm/pterm"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/pkgsync"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 const nativeHostName = "sh.vale.native"
@@ -210,7 +211,7 @@ func installNativeHostWindows(manifestData []byte, manifestFile, browser string)
 }
 
 func getLatestHostRelease() (string, error) {
-	resp, err := fetchJSON("https://api.github.com/repos/vale-cli/vale-native/releases/latest")
+	resp, err := pkgsync.FetchJSON("https://api.github.com/repos/vale-cli/vale-native/releases/latest")
 	if err != nil {
 		return "", err
 	}
@@ -293,7 +294,7 @@ func installNativeHost(args []string, _ *core.CLIFlags) error { //nolint:funlen
 	}
 
 	p.UpdateTitle(steps[1])
-	err = fetch(hostURL, locations["appDir"])
+	err = pkgsync.Fetch(hostURL, locations["appDir"])
 	if err != nil {
 		return progressError("host-install", err, p)
 	}

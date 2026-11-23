@@ -7,8 +7,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 func updateQueries(f *core.File, cfg *core.Config) []core.Scope {

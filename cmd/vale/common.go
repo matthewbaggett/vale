@@ -3,7 +3,7 @@ package main
 import (
 	"sort"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // PrintAlerts prints the given alerts in the user-specified format.

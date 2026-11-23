@@ -7,8 +7,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/vale-cli/vale/v3/internal/glob"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/glob"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // TestFileSuffixes name the YAML that holds a rule's test cases rather than a

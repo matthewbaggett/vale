@@ -13,9 +13,9 @@ import (
 	"github.com/d5/tengo/v2/stdlib"
 	"github.com/jdkato/prose/v3/strcase"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	rx "github.com/vale-cli/vale/v3/internal/regex"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	rx "github.com/matthewbaggett/vale/v3/internal/regex"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // Solution is a potential solution to an alert.

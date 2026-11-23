@@ -1,4 +1,4 @@
-package main
+package pkgsync
 
 import (
 	"encoding/json"
@@ -51,14 +51,14 @@ func pkgMeta(dir, name string) Meta {
 // to refuse it.
 func supportsVale(constraint string) bool {
 	constraint = strings.TrimSpace(constraint)
-	if constraint == "" || version == "master" {
+	if constraint == "" || Version == "master" {
 		return true
 	}
 	c, err := semver.NewConstraint(constraint)
 	if err != nil {
 		return true
 	}
-	v, err := semver.NewVersion(version)
+	v, err := semver.NewVersion(Version)
 	if err != nil {
 		return true
 	}
@@ -74,7 +74,7 @@ func supportedRelease(name, url, dir string) (string, error) {
 		return dir, nil
 	}
 
-	need := fmt.Sprintf("'%s' needs Vale %s; this is %s", name, meta.Vale, version)
+	need := fmt.Sprintf("'%s' needs Vale %s; this is %s", name, meta.Vale, Version)
 
 	// A manifest names each release and what it needs, so the one to install
 	// is known before anything else is downloaded, on any host. Without one,
@@ -113,7 +113,7 @@ func supportedRelease(name, url, dir string) (string, error) {
 		if err != nil {
 			return "", err
 		}
-		if fetch(rel.URL, tmp) != nil {
+		if Fetch(rel.URL, tmp) != nil {
 			continue
 		}
 		// A manifest entry has stated its floor; a feed entry is checked

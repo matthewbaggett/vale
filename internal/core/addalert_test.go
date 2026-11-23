@@ -3,7 +3,7 @@ package core
 import (
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 // AddAlert must not panic on an alert with a negative Span -- spelling can

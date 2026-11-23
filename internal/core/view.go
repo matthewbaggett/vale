@@ -8,9 +8,9 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/vale-cli/vale/v3/internal/nlp"
-	"github.com/vale-cli/vale/v3/internal/system"
-	"github.com/vale-cli/vale/v3/internal/textfsm"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/textfsm"
 )
 
 // DaselValue is the decoded document root passed to dasel. It may be a map

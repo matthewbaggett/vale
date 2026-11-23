@@ -10,7 +10,7 @@ import (
 	"github.com/jdkato/prose/v3/tag"
 	"github.com/jdkato/prose/v3/tokenize"
 
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // TaggedWord is a word with an NLP context.
