@@ -7,7 +7,7 @@ import (
 	"strings"
 	"sync"
 
-	rx "github.com/vale-cli/vale/v3/internal/regex"
+	rx "github.com/matthewbaggett/vale/v3/internal/regex"
 )
 
 // A tokenSplit runs a rule's tokens as patterns of their own.

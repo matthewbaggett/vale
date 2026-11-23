@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // enabledTestManager builds a two-rule style on disk and loads it under cfgFn's

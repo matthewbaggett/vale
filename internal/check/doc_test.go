@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 const sel = `section:has(> h2:contains("A & B"))`

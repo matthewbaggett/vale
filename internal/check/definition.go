@@ -8,12 +8,12 @@ import (
 	"strings"
 	"unicode/utf8"
 
+	rx "github.com/matthewbaggett/vale/v3/internal/regex"
 	"github.com/mitchellh/mapstructure"
-	rx "github.com/vale-cli/vale/v3/internal/regex"
 	"gopkg.in/yaml.v3"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 // cloneRule copies a rule definition, so a built-in one is never changed.

@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // TestShowErrorRuntime formats an E100, which has no file position, for the

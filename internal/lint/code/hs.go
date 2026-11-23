@@ -3,7 +3,7 @@ package code
 import (
 	"regexp"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // Haskell is parsed with the Elm grammar: the two languages share their

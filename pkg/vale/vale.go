@@ -19,10 +19,10 @@ import (
 	"math"
 	"strings"
 
-	"github.com/vale-cli/vale/v3/internal/check"
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/lint"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/check"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/lint"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // Severity levels, in order. They match `--minAlertLevel`.

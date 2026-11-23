@@ -9,7 +9,7 @@ import (
 	"github.com/jdkato/prose/v3/tag"
 	_ "github.com/jdkato/prose/v3/tag/lang/fr" // a model to install under another name
 
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 func TestLanguages(t *testing.T) {

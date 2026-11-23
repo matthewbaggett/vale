@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	rx "github.com/vale-cli/vale/v3/internal/regex"
+	rx "github.com/matthewbaggett/vale/v3/internal/regex"
 )
 
 // Tokens run apart find what their alternation finds, in its order.

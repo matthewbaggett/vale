@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/vale-cli/vale/v3/internal/lint/code/tsw"
+	"github.com/matthewbaggett/vale/v3/internal/lint/code/tsw"
 )
 
 type QueryEngine struct {

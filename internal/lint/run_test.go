@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // A pattern too large for the engine's backtracking stack fails every match

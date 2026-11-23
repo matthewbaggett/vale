@@ -9,8 +9,8 @@ import (
 
 	"github.com/niklasfasching/go-org/org"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 var orgConverter = org.New()

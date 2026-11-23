@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/vale-cli/vale/v3/internal/check"
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/check"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // PrintJSONAlerts prints Alerts in map[file.path][]Alert form.

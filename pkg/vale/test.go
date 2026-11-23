@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/vale-cli/vale/v3/internal/pkgsync"
-	"github.com/vale-cli/vale/v3/internal/testsuite"
+	"github.com/matthewbaggett/vale/v3/internal/pkgsync"
+	"github.com/matthewbaggett/vale/v3/internal/testsuite"
 )
 
 // TestResult is one case's outcome. Field names match `vale test

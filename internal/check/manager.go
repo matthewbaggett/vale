@@ -13,8 +13,8 @@ import (
 	"github.com/andybalholm/cascadia"
 	"golang.org/x/exp/maps"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 // Manager controls the loading and validating of the check extension points.

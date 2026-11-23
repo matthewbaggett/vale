@@ -6,7 +6,7 @@
 // produces no alerts rather than failing to compile.
 package lint
 
-import "github.com/vale-cli/vale/v3/internal/core"
+import "github.com/matthewbaggett/vale/v3/internal/core"
 
 func (l *Linter) lintXML(_ *core.File) error { return nil }
 

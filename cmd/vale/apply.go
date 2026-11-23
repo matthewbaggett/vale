@@ -9,10 +9,10 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/vale-cli/vale/v3/internal/check"
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/lint"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/check"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/lint"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // A fixEdit is one unambiguous fix, resolved to the byte span it rewrites.

@@ -12,12 +12,12 @@ import (
 	"unicode"
 	"unicode/utf8"
 
+	rx "github.com/matthewbaggett/vale/v3/internal/regex"
 	"github.com/mitchellh/mapstructure"
-	rx "github.com/vale-cli/vale/v3/internal/regex"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
-	"github.com/vale-cli/vale/v3/internal/spell"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/spell"
 )
 
 // defaultFilters is the reference the scans in spellfilter.go are tested

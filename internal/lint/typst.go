@@ -5,8 +5,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // Typst is its own grammar, so Vale reads it with its own parser: documents

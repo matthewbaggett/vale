@@ -3,8 +3,8 @@ package lint
 import (
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // TestConfigFS tests that a Config reads its assets from its own filesystem:

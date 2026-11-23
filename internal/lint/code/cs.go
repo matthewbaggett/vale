@@ -3,7 +3,7 @@ package code
 import (
 	"regexp"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // CSharp extracts `//` line comments, `///` XML documentation comments and

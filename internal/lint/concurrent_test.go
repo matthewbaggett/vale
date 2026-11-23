@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // withFloor forces every block onto one path or the other.

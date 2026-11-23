@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 func managerWithStyles(t *testing.T, files map[string]string) (*Manager, string) {

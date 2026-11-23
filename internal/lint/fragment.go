@@ -4,8 +4,8 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/lint/code"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/lint/code"
 )
 
 func findLine(s string, line int) string {

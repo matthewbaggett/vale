@@ -5,9 +5,9 @@ import (
 	"slices"
 	"sync"
 
-	"github.com/vale-cli/vale/v3/internal/check"
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/check"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 // A blockMemo remembers what the block-only rules found, from one lint to the

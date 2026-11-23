@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 func setupLocalSyncTestPackage(t *testing.T, root string) (string, string) {

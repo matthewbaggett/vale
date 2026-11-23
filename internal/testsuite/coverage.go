@@ -9,7 +9,7 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // Rules names every rule under the given files and directories, the way a
