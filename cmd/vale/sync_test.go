@@ -222,7 +222,7 @@ func syncZipPkg(t *testing.T, zipName string) string {
 	root := t.TempDir()
 	stylesPath := filepath.Join(root, "styles")
 
-	pkg, err := filepath.Abs(filepath.Join(TestData, zipName))
+	pkg, err := filepath.Abs(filepath.Join("../../testdata/pkg", zipName))
 	if err != nil {
 		t.Fatal(err)
 	}

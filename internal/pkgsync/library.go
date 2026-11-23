@@ -1,4 +1,4 @@
-package main
+package pkgsync
 
 import "encoding/json"
 
@@ -7,7 +7,7 @@ var library = "https://raw.githubusercontent.com/vale-cli/packages/master/librar
 func getLibrary(_ string) ([]Style, error) {
 	styles := []Style{}
 
-	resp, err := fetchJSON(library)
+	resp, err := FetchJSON(library)
 	if err != nil {
 		return styles, err
 	} else if err = json.Unmarshal(resp, &styles); err != nil {

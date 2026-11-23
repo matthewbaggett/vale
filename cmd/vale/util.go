@@ -3,8 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io"
-	"net/http"
 
 	"github.com/pterm/pterm"
 
@@ -36,15 +34,6 @@ func getJSON(data interface{}) string {
 		return err.Error()
 	}
 	return string(b)
-}
-
-func fetchJSON(url string) ([]byte, error) {
-	resp, err := http.Get(url) //nolint:gosec,noctx
-	if err != nil {
-		return []byte{}, err
-	}
-	defer resp.Body.Close()
-	return io.ReadAll(resp.Body)
 }
 
 func printJSON(t interface{}) error {

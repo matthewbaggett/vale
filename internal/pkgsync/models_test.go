@@ -1,4 +1,4 @@
-package main
+package pkgsync
 
 import (
 	"os"
@@ -78,23 +78,23 @@ func TestGrammarsToSync(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if names, _ := grammarsToSync(cfg); len(names) != 0 {
+	if names, _ := GrammarsToSync(cfg); len(names) != 0 {
 		t.Errorf("no key: got %v, want no grammars", names)
 	}
 	cfg.Grammars = []string{"ALL"}
-	if names, _ := grammarsToSync(cfg); len(names) != len(code.Names()) {
+	if names, _ := GrammarsToSync(cfg); len(names) != len(code.Names()) {
 		t.Errorf("ALL: got %d grammars, want every one", len(names))
 	}
 	cfg.Grammars = []string{"Go", " python "}
-	if names, _ := grammarsToSync(cfg); strings.Join(names, ",") != "go,python" {
+	if names, _ := GrammarsToSync(cfg); strings.Join(names, ",") != "go,python" {
 		t.Errorf("named: got %v", names)
 	}
 	cfg.Grammars = []string{}
-	if names, _ := grammarsToSync(cfg); len(names) != 0 {
+	if names, _ := GrammarsToSync(cfg); len(names) != 0 {
 		t.Errorf("NONE: got %v", names)
 	}
 	cfg.Grammars = []string{"cobol"}
-	if _, bad := grammarsToSync(cfg); bad == nil || !strings.Contains(bad.Error(), `"cobol"`) {
+	if _, bad := GrammarsToSync(cfg); bad == nil || !strings.Contains(bad.Error(), `"cobol"`) {
 		t.Errorf("unknown: %v", bad)
 	}
 }
@@ -114,7 +114,7 @@ func TestImpliedGrammars(t *testing.T) {
 
 	// Without the key, the sections decide; `[*]` and the negated section
 	// add nothing.
-	if names, _ := grammarsToSync(cfg); strings.Join(names, ",") != "go,python,rust,typescript" {
+	if names, _ := GrammarsToSync(cfg); strings.Join(names, ",") != "go,python,rust,typescript" {
 		t.Errorf("implied: got %v", names)
 	}
 
@@ -128,7 +128,7 @@ func TestImpliedGrammars(t *testing.T) {
 
 	// With the key, the sections are not consulted.
 	cfg.Grammars = []string{}
-	if names, _ := grammarsToSync(cfg); len(names) != 0 {
+	if names, _ := GrammarsToSync(cfg); len(names) != 0 {
 		t.Errorf("NONE with sections: got %v", names)
 	}
 }
