@@ -3,7 +3,7 @@ package check
 import (
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 // A zero-occurrence shortfall has no match to point at, but the scope that

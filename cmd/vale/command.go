@@ -11,12 +11,12 @@ import (
 	"github.com/jdkato/prose/v3/tag"
 	"github.com/pterm/pterm"
 
-	"github.com/vale-cli/vale/v3/internal/check"
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/lint"
-	"github.com/vale-cli/vale/v3/internal/nlp"
-	"github.com/vale-cli/vale/v3/internal/pkgsync"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/check"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/lint"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/pkgsync"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // TaggedWord is a word with an NLP context.

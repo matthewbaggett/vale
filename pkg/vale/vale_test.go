@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/vale-cli/vale/v3/pkg/vale"
+	"github.com/matthewbaggett/vale/v3/pkg/vale"
 )
 
 // fixture writes a minimal config and a document with known problems.
@@ -104,7 +104,7 @@ func TestParityWithCLI(t *testing.T) {
 	}
 	cfg, doc := fixture(t)
 	bin := filepath.Join(t.TempDir(), "vale")
-	build := exec.Command("go", "build", "-o", bin, "github.com/vale-cli/vale/v3/cmd/vale")
+	build := exec.Command("go", "build", "-o", bin, "github.com/matthewbaggett/vale/v3/cmd/vale")
 	if out, err := build.CombinedOutput(); err != nil {
 		t.Fatalf("build: %v\n%s", err, out)
 	}

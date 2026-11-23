@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // A memoized linter reports what a fresh one does, for a document linted

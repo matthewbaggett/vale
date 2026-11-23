@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 func mkdirs(t *testing.T, root string, dirs ...string) {

@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // A rule may extend another rule instead of an extension point: an `extends`

@@ -11,10 +11,10 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/lint/code"
-	"github.com/vale-cli/vale/v3/internal/lint/code/tsw"
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/lint/code"
+	"github.com/matthewbaggett/vale/v3/internal/lint/code/tsw"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 // grammarLoader finds a grammar's module for the configuration: under

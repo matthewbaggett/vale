@@ -7,7 +7,7 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 // A Cell is one cell of a Jupyter notebook: what kind it is, the language

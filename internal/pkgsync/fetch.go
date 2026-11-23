@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // Style represents an externally-hosted style.

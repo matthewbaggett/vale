@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 func TestExpandGroups(t *testing.T) {

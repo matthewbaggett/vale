@@ -5,9 +5,9 @@ import (
 
 	"github.com/jdkato/prose/v3/strcase"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
-	rx "github.com/vale-cli/vale/v3/internal/regex"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
+	rx "github.com/matthewbaggett/vale/v3/internal/regex"
 )
 
 // Capitalization checks the case of a string.

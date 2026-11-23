@@ -5,10 +5,10 @@ import (
 	"strconv"
 	"strings"
 
-	rx "github.com/vale-cli/vale/v3/internal/regex"
+	rx "github.com/matthewbaggett/vale/v3/internal/regex"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 // Existence checks for the present of Tokens.

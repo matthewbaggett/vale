@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/vale-cli/vale/v3/pkg/vale"
+	"github.com/matthewbaggett/vale/v3/pkg/vale"
 )
 
 // rulesFixture writes a project whose rule carries one passing and one
@@ -72,7 +72,7 @@ func TestTestParityWithCLI(t *testing.T) {
 	cfg, dir := rulesFixture(t)
 	bin := filepath.Join(t.TempDir(), "vale")
 	if out, err := exec.Command("go", "build", "-o", bin,
-		"github.com/vale-cli/vale/v3/cmd/vale").CombinedOutput(); err != nil {
+		"github.com/matthewbaggett/vale/v3/cmd/vale").CombinedOutput(); err != nil {
 		t.Fatalf("build: %v\n%s", err, out)
 	}
 

@@ -3,7 +3,7 @@ package code
 import (
 	"regexp"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // TOML extracts `#` comments. A `#` inside a string is not one, which is

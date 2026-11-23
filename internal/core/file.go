@@ -16,7 +16,7 @@ import (
 	"github.com/jdkato/prose/v3/summarize"
 	"github.com/jdkato/prose/v3/tag"
 
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 var commentControlRE = regexp.MustCompile(`^vale (.+\..+|[^.]+) = (YES|NO|on|off)$`)

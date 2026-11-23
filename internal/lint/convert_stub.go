@@ -8,7 +8,7 @@ package lint
 import (
 	"errors"
 
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // ErrNoConverter reports a format this build cannot convert to HTML.

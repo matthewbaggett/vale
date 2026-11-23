@@ -6,7 +6,7 @@ import (
 
 	"github.com/andybalholm/cascadia"
 
-	"github.com/vale-cli/vale/v3/internal/check"
+	"github.com/matthewbaggett/vale/v3/internal/check"
 )
 
 // TestWrapSections pins the tree the selectors run against: a heading and

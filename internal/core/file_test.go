@@ -7,7 +7,7 @@ import (
 
 	"github.com/jdkato/prose/v3/summarize"
 
-	"github.com/vale-cli/vale/v3/internal/glob"
+	"github.com/matthewbaggett/vale/v3/internal/glob"
 )
 
 // TestNewFileSectionOrderWins verifies that when multiple config sections

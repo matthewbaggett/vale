@@ -6,7 +6,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/vale-cli/vale/v3/internal/lint/code/tsw"
+	"github.com/matthewbaggett/vale/v3/internal/lint/code/tsw"
 )
 
 // A documentation comment has a convention of its own on top of the

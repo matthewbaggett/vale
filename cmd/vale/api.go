@@ -7,9 +7,9 @@ import (
 
 	"github.com/spf13/pflag"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/pkgsync"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/pkgsync"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 func init() {

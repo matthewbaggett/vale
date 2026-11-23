@@ -12,8 +12,8 @@ import (
 	grh "github.com/yuin/goldmark/renderer/html"
 	"github.com/yuin/goldmark/text"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 // Markdown configuration.

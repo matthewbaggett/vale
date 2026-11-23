@@ -1,7 +1,7 @@
 package lint
 
 import (
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // lintNotebook lints a Jupyter notebook cell by cell: a Markdown cell as

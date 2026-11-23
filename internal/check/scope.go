@@ -8,8 +8,8 @@ import (
 
 	"github.com/andybalholm/cascadia"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 // Parsed scopes and selectors are cached rather than rebuilt.

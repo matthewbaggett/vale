@@ -10,8 +10,8 @@ import (
 	"strings"
 	"syscall/js"
 
-	"github.com/vale-cli/vale/v3/internal/check"
-	"github.com/vale-cli/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/check"
+	"github.com/matthewbaggett/vale/v3/internal/core"
 )
 
 // A resolved configuration: what each section's rules come to once its

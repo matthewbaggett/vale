@@ -6,8 +6,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/lint/code/tsw"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/lint/code/tsw"
 )
 
 type padding func(string) int

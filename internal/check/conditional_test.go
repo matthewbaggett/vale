@@ -3,8 +3,8 @@ package check
 import (
 	"testing"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 func makeConditional(t *testing.T, cfg *core.Config, def baseCheck) Conditional {

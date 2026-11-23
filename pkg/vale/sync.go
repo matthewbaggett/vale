@@ -1,7 +1,7 @@
 package vale
 
 import (
-	"github.com/vale-cli/vale/v3/internal/pkgsync"
+	"github.com/matthewbaggett/vale/v3/internal/pkgsync"
 )
 
 // SyncResult is what `vale sync` reports: what was installed and where.

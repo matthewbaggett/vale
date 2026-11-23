@@ -5,7 +5,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 // Languages lists the languages the configuration names with `Lang`, other

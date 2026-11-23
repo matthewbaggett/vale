@@ -1,7 +1,7 @@
 package lint
 
 import (
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 
 	"reflect"
 	"testing"

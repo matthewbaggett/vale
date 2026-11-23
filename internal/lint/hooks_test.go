@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vale-cli/vale/v3/internal/nlp"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
 )
 
 // The hooks observe a run without changing its alerts, including above the

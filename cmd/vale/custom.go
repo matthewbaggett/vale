@@ -7,8 +7,8 @@ import (
 
 	"github.com/Masterminds/sprig/v3"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // ProcessedFile represents a file that Vale has linted.

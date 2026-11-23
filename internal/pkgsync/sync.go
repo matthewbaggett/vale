@@ -8,8 +8,8 @@ import (
 
 	cp "github.com/otiai10/copy"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 func InitPath(cfg *core.Config) error {

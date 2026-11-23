@@ -10,9 +10,9 @@ import (
 
 	"golang.org/x/exp/maps"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/nlp"
-	rx "github.com/vale-cli/vale/v3/internal/regex"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/nlp"
+	rx "github.com/matthewbaggett/vale/v3/internal/regex"
 )
 
 // Substitution switches the values of Swap for its keys.

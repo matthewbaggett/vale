@@ -13,9 +13,9 @@ import (
 	"github.com/jdkato/prose/v3/models"
 	"github.com/pterm/pterm"
 
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/lint/code"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/lint/code"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // A language's models come from the prose release that matches the prose

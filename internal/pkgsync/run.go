@@ -1,8 +1,8 @@
 package pkgsync
 
 import (
-	"github.com/vale-cli/vale/v3/internal/core"
-	"github.com/vale-cli/vale/v3/internal/system"
+	"github.com/matthewbaggett/vale/v3/internal/core"
+	"github.com/matthewbaggett/vale/v3/internal/system"
 )
 
 // Hooks lets a caller watch a sync. Both fields are optional.
